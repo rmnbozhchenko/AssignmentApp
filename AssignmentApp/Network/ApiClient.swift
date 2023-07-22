@@ -1,7 +1,8 @@
 import Foundation
 
 protocol ApiClient {
-    func places(for queryModel: ApiQueryModel) async throws -> PlacesResponse
+    func places(for queryModel: PlacesQueryModel) async throws -> PlacesResponse
+    func flights(for queryModel: FlightsQueryModel) async throws -> FlightsResponses
 }
 
 private enum Constants {
@@ -81,7 +82,11 @@ final class ApiClientImpl {
 }
 
 extension ApiClientImpl: ApiClient {
-    func places(for queryModel: ApiQueryModel) async throws -> PlacesResponse {
+    func places(for queryModel: PlacesQueryModel) async throws -> PlacesResponse {
+        try await load(for: queryModel)
+    }
+    
+    func flights(for queryModel: FlightsQueryModel) async throws -> FlightsResponses {
         try await load(for: queryModel)
     }
 }

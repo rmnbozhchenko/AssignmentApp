@@ -26,10 +26,19 @@ final class ContentViewModel: ObservableObject {
         
         Task {
             do {
-                let queryModel = PlacesQueryModel(first: 20)
-                let placesResponse = try await apiClient.places(for: queryModel)
-                let citiesNames = placesResponse.places.edges.map { $0.node.name }
-                state = .success(content: citiesNames)
+//                let placesQueryModel = PlacesQueryModel(term: "", first: 20)
+//                let placesResponse = try await apiClient.places(for: placesQueryModel)
+//                let citiesNames = placesResponse.places.edges.map { $0.node.name }
+//                state = .success(content: citiesNames)
+                
+                let flightsQueryModel = FlightsQueryModel(limit: 1,
+                                                          currency: "EUR",
+                                                          sources: ["City:brno_cz"],
+                                                          destinations: ["City:new-york-city_ny_us"],
+                                                          departureStart: "2023-08-01T00:00:00",
+                                                          departureEnd: "2023-08-01T23:59:00")
+                let flightsResponse = try await apiClient.flights(for: flightsQueryModel)
+                print(flightsResponse)
             } catch {
                 handleError(error)
             }

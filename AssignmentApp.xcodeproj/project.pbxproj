@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7190935D2A6BE3B00046E5AA /* FlightsQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190935C2A6BE3B00046E5AA /* FlightsQueryModel.swift */; };
+		7190935F2A6BF07E0046E5AA /* FlightsResponses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7190935E2A6BF07E0046E5AA /* FlightsResponses.swift */; };
 		71D0365B2A6BABD600043AE6 /* AssignmentAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0365A2A6BABD600043AE6 /* AssignmentAppApp.swift */; };
 		71D0365D2A6BABD600043AE6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0365C2A6BABD600043AE6 /* ContentView.swift */; };
 		71D0365F2A6BABD800043AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D0365E2A6BABD800043AE6 /* Assets.xcassets */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7190935C2A6BE3B00046E5AA /* FlightsQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsQueryModel.swift; sourceTree = "<group>"; };
+		7190935E2A6BF07E0046E5AA /* FlightsResponses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightsResponses.swift; sourceTree = "<group>"; };
 		71D036572A6BABD600043AE6 /* AssignmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D0365A2A6BABD600043AE6 /* AssignmentAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentAppApp.swift; sourceTree = "<group>"; };
 		71D0365C2A6BABD600043AE6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -103,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				71D036742A6BC25500043AE6 /* PlacesQueryModel.swift */,
+				7190935C2A6BE3B00046E5AA /* FlightsQueryModel.swift */,
 			);
 			path = QueryModels;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				71D036722A6BC18600043AE6 /* PlacesResponse.swift */,
+				7190935E2A6BF07E0046E5AA /* FlightsResponses.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -196,12 +202,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				71D0367D2A6BD6CD00043AE6 /* ViewModelState.swift in Sources */,
+				7190935D2A6BE3B00046E5AA /* FlightsQueryModel.swift in Sources */,
 				71D036732A6BC18600043AE6 /* PlacesResponse.swift in Sources */,
 				71D036712A6BC13400043AE6 /* ApiClientError.swift in Sources */,
 				71D036752A6BC25500043AE6 /* PlacesQueryModel.swift in Sources */,
 				71D0366D2A6BC02D00043AE6 /* ApiQueryOperaton.swift in Sources */,
 				71D0365D2A6BABD600043AE6 /* ContentView.swift in Sources */,
 				71D0367B2A6BD42B00043AE6 /* ContentViewModel.swift in Sources */,
+				7190935F2A6BF07E0046E5AA /* FlightsResponses.swift in Sources */,
 				71D036772A6BC6D200043AE6 /* ApiResult.swift in Sources */,
 				71D0365B2A6BABD600043AE6 /* AssignmentAppApp.swift in Sources */,
 				71D0366A2A6BACCF00043AE6 /* ApiClient.swift in Sources */,

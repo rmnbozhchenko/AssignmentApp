@@ -43,7 +43,7 @@ final class ApiClientImpl {
         return request
     }
     
-    func load<Response>(for queryModel: ApiQueryModel) async throws -> Response where Response: Decodable {
+    private func load<Response>(for queryModel: ApiQueryModel) async throws -> Response where Response: Decodable {
         let queryOperation = ApiQueryOperaton(model: queryModel)
         
         let request = try createRequest(for: queryOperation)

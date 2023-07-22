@@ -18,6 +18,7 @@
 		71D036752A6BC25500043AE6 /* PlacesQueryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036742A6BC25500043AE6 /* PlacesQueryModel.swift */; };
 		71D036772A6BC6D200043AE6 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036762A6BC6D200043AE6 /* ApiResult.swift */; };
 		71D0367B2A6BD42B00043AE6 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0367A2A6BD42B00043AE6 /* ContentViewModel.swift */; };
+		71D0367D2A6BD6CD00043AE6 /* ViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0367C2A6BD6CD00043AE6 /* ViewModelState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		71D036742A6BC25500043AE6 /* PlacesQueryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacesQueryModel.swift; sourceTree = "<group>"; };
 		71D036762A6BC6D200043AE6 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 		71D0367A2A6BD42B00043AE6 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		71D0367C2A6BD6CD00043AE6 /* ViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 			children = (
 				71D0365C2A6BABD600043AE6 /* ContentView.swift */,
 				71D0367A2A6BD42B00043AE6 /* ContentViewModel.swift */,
+				71D0367C2A6BD6CD00043AE6 /* ViewModelState.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71D0367D2A6BD6CD00043AE6 /* ViewModelState.swift in Sources */,
 				71D036732A6BC18600043AE6 /* PlacesResponse.swift in Sources */,
 				71D036712A6BC13400043AE6 /* ApiClientError.swift in Sources */,
 				71D036752A6BC25500043AE6 /* PlacesQueryModel.swift in Sources */,

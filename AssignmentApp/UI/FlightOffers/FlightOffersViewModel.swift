@@ -1,20 +1,34 @@
 import Foundation
 import SwiftUI
 
+private enum Constants {
+    // Now all constants are static,
+    // but of course they could be used from the user input.
+    static let title = "flight offers".uppercased()
+    
+    static let generalErrorMessage = "Something was wrong, please try again later."
+    
+    static let placesTerm = ""
+    static let placesCount = 5
+    
+    static let flightsCount = 5
+    static let flightsCurrency = "EUR"
+    static let flightsDestinations = [String]()
+}
+
 @MainActor
 final class FlightOffersViewModel: ObservableObject {
-    // I didn't use localisation here, in real project - I will.
-    // Also I didn't create constants for the values
-    
-    let title = "flight offers".uppercased()
+    let title = Constants.title
     
     @Published
     var state: ViewModelState<[FlightOfferViewModel]>
     
     private let apiClient: ApiClient
+    private let departureDateFilter: DepartureDateFilter
     
-    init(apiClient: ApiClient) {
+    init(apiClient: ApiClient, departureDateFilter: DepartureDateFilter) {
         self.apiClient = apiClient
+        self.departureDateFilter = departureDateFilter
         self.state = .loading
     }
     
@@ -23,18 +37,21 @@ final class FlightOffersViewModel: ObservableObject {
         
         Task {
             do {
-                let placesQueryModel = PlacesQueryModel(term: "", first: 5)
+                let placesQueryModel = PlacesQueryModel(term: Constants.placesTerm,
+                                                        first: Constants.placesCount)
                 let placesResponse = try await apiClient.places(for: placesQueryModel)
                 let citiesIds = placesResponse.places.edges.map { $0.node.id }
                 
-                let flightsQueryModel = FlightsQueryModel(limit: 5,
-                                                          currency: "EUR",
+                let departureDate = departureDateFilter.departureDate()
+                
+                let flightsQueryModel = FlightsQueryModel(limit: Constants.flightsCount,
+                                                          currency: Constants.flightsCurrency,
                                                           sources: citiesIds,
-                                                          destinations: [],
-                                                          departureStart: "2023-08-01T00:00:00",
-                                                          departureEnd: "2023-08-01T23:59:00")
+                                                          destinations: Constants.flightsDestinations,
+                                                          departureStart: departureDate.startDateString,
+                                                          departureEnd: departureDate.endDateString)
                 let flightsResponse = try await apiClient.flights(for: flightsQueryModel)
-                let content = flightsResponse.mapToViewModels()
+                let content = flightsResponse.mapToViewModels(imageUrlMaker: apiClient.imageUrl(for:))
                 self.state = .success(content: content)
             } catch {
                 handleError(error)
@@ -45,10 +62,7 @@ final class FlightOffersViewModel: ObservableObject {
 
 private extension FlightOffersViewModel {
     func handleError(_ error: Error) {
-        // I am not using Localisation during this task, also error handling is pretty straightforward.
-        // Just to have simple error state.
-        // In real app we should show to the user more usefull text of error
-        
+        // Error handling here is pretty straightforward.
         if let apiClientError = error as? ApiClientError {
             switch apiClientError {
             case .wrongApiEndpoint:
@@ -64,6 +78,6 @@ private extension FlightOffersViewModel {
             }
         }
         
-        state = .error("Something was wrong, please try again later.")
+        state = .error(Constants.generalErrorMessage)
     }
 }

@@ -1,9 +1,7 @@
 import Foundation
 
 struct PlacesQueryModel: ApiQueryModel {
-    /// Reflects search term for the fetched places from the API
     let term: String
-    /// Reflects how many places should be fetched from the API
     let first: Int
     
     var description: String {

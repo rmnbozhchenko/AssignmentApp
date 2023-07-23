@@ -3,15 +3,22 @@ import Foundation
 protocol ApiClient {
     func places(for queryModel: PlacesQueryModel) async throws -> PlacesResponse
     func flights(for queryModel: FlightsQueryModel) async throws -> FlightsResponses
+    
+    func imageUrl(for cityName: String) -> URL?
 }
 
 private enum Constants {
     static let apiEndpoint = "https://api.skypicker.com/umbrella/v2/graphql"
     static let requestHttpMethod = "POST"
+    static let contentType = "Content-Type"
+    static let contentTypeValue = "application/json"
+    
+    static let imageUrlString: (String) -> String = {
+        "https://images.kiwi.com/photos/600x600/\($0).jpg"
+    }
 }
 
 final class ApiClientImpl {
-    
     private let session: URLSession
     private let encoder: JSONEncoder
     private let decoder: JSONDecoder
@@ -27,12 +34,28 @@ final class ApiClientImpl {
         self.encoder = encoder
         self.decoder = decoder
     }
+}
+
+extension ApiClientImpl: ApiClient {
+    func places(for queryModel: PlacesQueryModel) async throws -> PlacesResponse {
+        try await load(for: queryModel)
+    }
     
+    func flights(for queryModel: FlightsQueryModel) async throws -> FlightsResponses {
+        try await load(for: queryModel)
+    }
+    
+    func imageUrl(for cityName: String) -> URL? {
+        URL(string: Constants.imageUrlString(cityName))
+    }
+}
+
+private extension ApiClientImpl {
     private func createRequest(for queryOperaton: ApiQueryOperaton) throws -> URLRequest {
         var request = URLRequest(url: apiUrl)
         
         request.httpMethod = Constants.requestHttpMethod
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(Constants.contentTypeValue, forHTTPHeaderField: Constants.contentType)
         
         do {
             request.httpBody = try encoder.encode(queryOperaton)
@@ -74,15 +97,5 @@ final class ApiClientImpl {
         } catch {
             throw ApiClientError.wrongDecoding
         }
-    }
-}
-
-extension ApiClientImpl: ApiClient {
-    func places(for queryModel: PlacesQueryModel) async throws -> PlacesResponse {
-        try await load(for: queryModel)
-    }
-    
-    func flights(for queryModel: FlightsQueryModel) async throws -> FlightsResponses {
-        try await load(for: queryModel)
     }
 }

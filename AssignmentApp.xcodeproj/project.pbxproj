@@ -13,10 +13,11 @@
 		71CBE68C2A6C015700A0196B /* FlightOfferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CBE68B2A6C015700A0196B /* FlightOfferView.swift */; };
 		71CBE6902A6C1B4000A0196B /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CBE68F2A6C1B4000A0196B /* LoadingView.swift */; };
 		71CBE6922A6C1B7000A0196B /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CBE6912A6C1B7000A0196B /* ErrorView.swift */; };
+		71CBE6972A6CFD3A00A0196B /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CBE6962A6CFD3A00A0196B /* DateFormatterExtension.swift */; };
+		71CBE6992A6D051700A0196B /* DepartureDateFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CBE6982A6D051700A0196B /* DepartureDateFilter.swift */; };
+		71CBE69E2A6D366500A0196B /* PageProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71CBE69D2A6D366500A0196B /* PageProgressView.swift */; };
 		71D0365B2A6BABD600043AE6 /* AssignmentAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0365A2A6BABD600043AE6 /* AssignmentAppApp.swift */; };
 		71D0365D2A6BABD600043AE6 /* FlightOffersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0365C2A6BABD600043AE6 /* FlightOffersView.swift */; };
-		71D0365F2A6BABD800043AE6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D0365E2A6BABD800043AE6 /* Assets.xcassets */; };
-		71D036632A6BABD800043AE6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71D036622A6BABD800043AE6 /* Preview Assets.xcassets */; };
 		71D0366A2A6BACCF00043AE6 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036692A6BACCF00043AE6 /* ApiClient.swift */; };
 		71D0366D2A6BC02D00043AE6 /* ApiQueryOperaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D0366C2A6BC02D00043AE6 /* ApiQueryOperaton.swift */; };
 		71D036712A6BC13400043AE6 /* ApiClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71D036702A6BC13400043AE6 /* ApiClientError.swift */; };
@@ -34,12 +35,12 @@
 		71CBE68B2A6C015700A0196B /* FlightOfferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOfferView.swift; sourceTree = "<group>"; };
 		71CBE68F2A6C1B4000A0196B /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		71CBE6912A6C1B7000A0196B /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		71CBE6962A6CFD3A00A0196B /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		71CBE6982A6D051700A0196B /* DepartureDateFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartureDateFilter.swift; sourceTree = "<group>"; };
+		71CBE69D2A6D366500A0196B /* PageProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageProgressView.swift; sourceTree = "<group>"; };
 		71D036572A6BABD600043AE6 /* AssignmentApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AssignmentApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71D0365A2A6BABD600043AE6 /* AssignmentAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentAppApp.swift; sourceTree = "<group>"; };
 		71D0365C2A6BABD600043AE6 /* FlightOffersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightOffersView.swift; sourceTree = "<group>"; };
-		71D0365E2A6BABD800043AE6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		71D036602A6BABD800043AE6 /* AssignmentApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AssignmentApp.entitlements; sourceTree = "<group>"; };
-		71D036622A6BABD800043AE6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71D036692A6BACCF00043AE6 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		71D0366C2A6BC02D00043AE6 /* ApiQueryOperaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiQueryOperaton.swift; sourceTree = "<group>"; };
 		71D036702A6BC13400043AE6 /* ApiClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientError.swift; sourceTree = "<group>"; };
@@ -82,8 +83,8 @@
 		71CBE68E2A6C1B2800A0196B /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				71CBE68F2A6C1B4000A0196B /* LoadingView.swift */,
-				71CBE6912A6C1B7000A0196B /* ErrorView.swift */,
+				71CBE69C2A6D0C6A00A0196B /* Model */,
+				71CBE69B2A6D0C6400A0196B /* View */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -92,8 +93,36 @@
 			isa = PBXGroup;
 			children = (
 				71D0366B2A6BC01200043AE6 /* Network */,
+				71CBE69A2A6D0C4A00A0196B /* Date */,
 			);
 			path = Core;
+			sourceTree = "<group>";
+		};
+		71CBE69A2A6D0C4A00A0196B /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				71CBE6962A6CFD3A00A0196B /* DateFormatterExtension.swift */,
+				71CBE6982A6D051700A0196B /* DepartureDateFilter.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
+		71CBE69B2A6D0C6400A0196B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71CBE68F2A6C1B4000A0196B /* LoadingView.swift */,
+				71CBE6912A6C1B7000A0196B /* ErrorView.swift */,
+				71CBE69D2A6D366500A0196B /* PageProgressView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71CBE69C2A6D0C6A00A0196B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				71D0367C2A6BD6CD00043AE6 /* ViewModelState.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		71D0364E2A6BABD600043AE6 = {
@@ -118,19 +147,8 @@
 				71D0365A2A6BABD600043AE6 /* AssignmentAppApp.swift */,
 				71CBE6932A6CFA7A00A0196B /* Core */,
 				71D036792A6BD41B00043AE6 /* UI */,
-				71D0365E2A6BABD800043AE6 /* Assets.xcassets */,
-				71D036602A6BABD800043AE6 /* AssignmentApp.entitlements */,
-				71D036612A6BABD800043AE6 /* Preview Content */,
 			);
 			path = AssignmentApp;
-			sourceTree = "<group>";
-		};
-		71D036612A6BABD800043AE6 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				71D036622A6BABD800043AE6 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		71D0366B2A6BC01200043AE6 /* Network */ = {
@@ -167,7 +185,6 @@
 		71D036792A6BD41B00043AE6 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				71D0367C2A6BD6CD00043AE6 /* ViewModelState.swift */,
 				71CBE68E2A6C1B2800A0196B /* Common */,
 				71CBE68D2A6C0CDB00A0196B /* FlightOffer */,
 				719093602A6BF7280046E5AA /* FlightOffers */,
@@ -233,8 +250,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				71D036632A6BABD800043AE6 /* Preview Assets.xcassets in Resources */,
-				71D0365F2A6BABD800043AE6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +266,10 @@
 				71D036712A6BC13400043AE6 /* ApiClientError.swift in Sources */,
 				71D036752A6BC25500043AE6 /* PlacesQueryModel.swift in Sources */,
 				71D0366D2A6BC02D00043AE6 /* ApiQueryOperaton.swift in Sources */,
+				71CBE6992A6D051700A0196B /* DepartureDateFilter.swift in Sources */,
 				71D0365D2A6BABD600043AE6 /* FlightOffersView.swift in Sources */,
+				71CBE6972A6CFD3A00A0196B /* DateFormatterExtension.swift in Sources */,
+				71CBE69E2A6D366500A0196B /* PageProgressView.swift in Sources */,
 				71D0367B2A6BD42B00043AE6 /* FlightOffersViewModel.swift in Sources */,
 				71CBE6902A6C1B4000A0196B /* LoadingView.swift in Sources */,
 				7190935F2A6BF07E0046E5AA /* FlightsResponses.swift in Sources */,
@@ -381,10 +399,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AssignmentApp/AssignmentApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AssignmentApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -396,7 +414,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -417,10 +434,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = AssignmentApp/AssignmentApp.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"AssignmentApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -432,7 +449,6 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";

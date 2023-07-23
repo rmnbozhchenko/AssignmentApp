@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct ErrorView: View {
-    // I didn't use localisation here, in real project - I will.
-    
     let errorMessage: String
     let retryAction: () -> Void
     

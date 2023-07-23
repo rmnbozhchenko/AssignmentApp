@@ -1,17 +1,11 @@
 import Foundation
 
 struct FlightsQueryModel: ApiQueryModel {
-    /// Reflects the results limit which fetched from the API
     let limit: Int
-    /// Reflects the currency for the fetched flights from the API
     let currency: String
-    /// Reflects the Departure cities for the fetched flights from the API
     let sources: [String]
-    /// Reflects the Destination cities for the fetched flights from the API
     let destinations: [String]
-    /// Reflects the departure start time for the fetched flights from the API
     let departureStart: String
-    /// Reflects the departure end time for the fetched flights from the API
     let departureEnd: String
     
     var description: String {

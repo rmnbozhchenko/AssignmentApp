@@ -1,10 +1,3 @@
-//
-//  File.swift
-//  AssignmentApp
-//
-//  Created by Roman Bozhchenko on 22/07/2023.
-//
-
 import Foundation
 
 struct ApiResult<Value: Decodable>: Decodable {

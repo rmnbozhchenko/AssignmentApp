@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct FlightOfferView: View {
-    
     let viewModel: FlightOfferViewModel
+    let viewWidth: CGFloat
     
     var body: some View {
         VStack {
@@ -13,17 +13,17 @@ struct FlightOfferView: View {
 }
 
 private extension FlightOfferView {
-    // I didn't create constants for the values here, in real project - I will
-    
     func makeImageView() -> some View {
         AsyncImage(url: viewModel.imageUrl,
                    content: { image in
             image
                 .resizable()
-                .aspectRatio(contentMode: .fit)
+                .aspectRatio(contentMode: .fill)
+                .frame(width: viewWidth)
         }, placeholder: {
             Color.gray
         })
+        .frame(width: viewWidth)
     }
     
     func makeDetailsView() -> some View {
@@ -56,6 +56,5 @@ private extension FlightOfferView {
         }
         .background(.gray.opacity(0.2))
         .cornerRadius(30)
-        .padding([.leading, .top, .trailing])
     }
 }

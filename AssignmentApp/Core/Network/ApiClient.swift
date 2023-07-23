@@ -37,7 +37,6 @@ final class ApiClientImpl {
         do {
             request.httpBody = try encoder.encode(queryOperaton)
         } catch {
-            print(error)
             throw ApiClientError.wrongEncoding
         }
         
@@ -55,7 +54,6 @@ final class ApiClientImpl {
             // It's just for time saving
             responseData = try await session.data(for: request).0
         } catch {
-            print(error)
             throw ApiClientError.wrongDataLoading
         }
         
@@ -71,11 +69,9 @@ final class ApiClientImpl {
             if let response = result.value {
                 return response
             } else {
-                print(result.errorMessages)
                 throw ApiClientError.wrongQueryModel
             }
         } catch {
-            print(error)
             throw ApiClientError.wrongDecoding
         }
     }

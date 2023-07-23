@@ -10,7 +10,7 @@ struct PlacesQueryModel: ApiQueryModel {
         """
         query places {
             places(
-                search: { term: \(term) },
+                search: { term: "\(term)" },
                 filter: {
                     onlyTypes: [AIRPORT, CITY],
                     groupByCity: true

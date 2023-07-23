@@ -1,10 +1,3 @@
-//
-//  AssignmentAppApp.swift
-//  AssignmentApp
-//
-//  Created by Roman Bozhchenko on 22/07/2023.
-//
-
 import SwiftUI
 
 @main
@@ -23,8 +16,8 @@ struct AssignmentAppApp: App {
     
     @MainActor
     private func makeContentView() -> some View {
-        let viewModel = ContentViewModel(apiClient: apiClient)
-        return ContentView(viewModel: viewModel)
+        let viewModel = FlightOffersViewModel(apiClient: apiClient)
+        return FlightOffersView(viewModel: viewModel)
     }
 }
 

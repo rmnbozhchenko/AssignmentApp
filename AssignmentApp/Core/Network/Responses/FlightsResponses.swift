@@ -11,7 +11,6 @@ extension FlightsResponses {
         let id: String
         let duration: Int
         let cabinClasses: [String]
-        let priceEur: PriceEur
         let bookingOptions: BookingOptions
         let provider: Provider
         let sector: Sector
@@ -32,10 +31,6 @@ extension FlightsResponses {
 
     struct Price: Decodable {
         let amount, formattedValue: String
-    }
-
-    struct PriceEur: Decodable {
-        let amount: String
     }
 
     struct Provider: Decodable {
